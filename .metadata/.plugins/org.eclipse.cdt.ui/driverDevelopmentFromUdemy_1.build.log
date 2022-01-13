@@ -1,0 +1,26 @@
+22:27:11 **** Build of configuration Debug for project driverDevelopmentFromUdemy_1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:23:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+   23 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "driverDevelopmentFromUdemy_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\CALISMALAR\STM32_CUBE_IDE\driverDevelopmentFromUdemy_1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="driverDevelopmentFromUdemy_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: driverDevelopmentFromUdemy_1.elf
+ 
+arm-none-eabi-size   driverDevelopmentFromUdemy_1.elf 
+arm-none-eabi-objdump -h -S  driverDevelopmentFromUdemy_1.elf  > "driverDevelopmentFromUdemy_1.list"
+arm-none-eabi-objcopy  -O binary  driverDevelopmentFromUdemy_1.elf  "driverDevelopmentFromUdemy_1.bin"
+   text	   data	    bss	    dec	    hex	filename
+    676	      8	   1568	   2252	    8cc	driverDevelopmentFromUdemy_1.elf
+Finished building: default.size.stdout
+ 
+Finished building: driverDevelopmentFromUdemy_1.bin
+Finished building: driverDevelopmentFromUdemy_1.list
+ 
+ 
+
+22:27:13 Build Finished. 0 errors, 1 warnings. (took 1s.863ms)
+
